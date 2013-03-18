@@ -1,6 +1,6 @@
 class Column
   include Mongoid::Document
-  include Mongoid::Timestamps  
+  include Mongoid::Timestamps
   
   field :n, as: :name, type: String
   field :t, as: :type, type: String

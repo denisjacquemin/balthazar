@@ -15,6 +15,7 @@ class ListsController < ApplicationController
   # GET /lists/new
   def new
     @list = List.new
+    3.times { @list.columns.build }
   end
 
   # GET /lists/1/edit
@@ -25,6 +26,7 @@ class ListsController < ApplicationController
   # POST /lists.json
   def create
     @list = List.new(list_params)
+    #puts list_params.to_yaml
 
     respond_to do |format|
       if @list.save
@@ -69,6 +71,6 @@ class ListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def list_params
-      params.require(:list).permit(:name)
+      params.require(:list).permit(:name, columns_attributes: :name)
     end
 end
