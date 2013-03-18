@@ -2,8 +2,8 @@ class Item
   include Mongoid::Document
   include Mongoid::Timestamps  
   
-  field :values, type: Hash
-  field :metas,  type: Hash
+  field :v, as: :values, type: Hash
+  field :m, as: :metas,  type: Hash
   
   embedded_in :list
   
