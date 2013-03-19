@@ -1,0 +1,8 @@
+<h1>Editing site</h1>
+
+<%= render 'form' %>
+
+<%= render :partial => "/lists/lists", :object => @site.lists %>
+
+<%= link_to 'Show', @site %> |
+<%= link_to 'Back', sites_path %>
