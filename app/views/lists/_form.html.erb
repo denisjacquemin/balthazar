@@ -11,20 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-
-  <h2>Columns</h2>
-  <%= f.fields_for :columns do |columns_form| %>
-    <div class="field">
-      <%= columns_form.label :name %>
-      <%= columns_form.text_field :name %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	<div class="row">
+		<div class="small-12 large-12 columns">
+	  		<%= f.label :name %>
+	    	<%= f.text_field :name %>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="small-12 large-12 columns">
+			<h2>Columns</h2>
+		</div>
+	</div>
+	
+	<%= f.fields_for :columns do |columns_form| %>
+		<div class="row">
+			<div class="small-12 large-12 columns">
+				<%= columns_form.label :name %>
+				<%= columns_form.text_field :name %>
+			</div>
+		</div>
+	<% end %>
+	
+	<div class="row">
+		<div class="small-12 large-12 columns">
+			<hr>
+			<ul class="inline-list">
+				<li><%= f.submit class: "small button"%></li>
+				<li><%= link_to 'Cancel', lists_path %></li>
+			</ul>
+		</div>
+	</div>
 <% end %>
